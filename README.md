@@ -4,7 +4,10 @@ My Dotfiles
 # Dependencies
 - Waybar
 - Swayfx
-- kitty
-- ranger
-- nvim
-- rofi
+- Kitty
+- Ranger
+- Nvim
+- Rofi
+
+# Screenshots 
+
