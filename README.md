@@ -11,3 +11,7 @@ My Dotfiles
 
 # Screenshots 
 
+![image](https://github.com/user-attachments/assets/8818350e-9f46-4266-92a1-77f0c272f642)
+
+# Install
+Install Script (WIP)
