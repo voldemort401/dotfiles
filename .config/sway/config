@@ -6,6 +6,11 @@ exec waybar
 default_border pixel
 client.focused          $color5 $color13 $color0 $color6   $color12
 client.background       $background 
+blur on
+blur_xray on
+blur_passes 2
+blur_radius 5
+
 gaps inner 10 
 include /etc/sway/config.d/*
 
