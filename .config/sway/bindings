@@ -113,7 +113,8 @@ bindsym $mod+Shift+Right move right
 
 
 #screenshot
-bindsym $mod+Print exec $scripts/screenshot 
+bindsym $mod+Print exec $scripts/screenshot --area
+bindsym Mod1+Print exec $scripts/screenshot --now
 bindsym $mod+shift+x exec $scripts/lock
 
 #volume control
