@@ -1,0 +1,12 @@
+#waybar { 
+  background-color: #040200;
+  color: #FFFADA;
+} 
+
+#workspaces{
+  color: #FFFADA;
+}
+
+#workspaces button.visible{
+  color: #FFFADA
+}
