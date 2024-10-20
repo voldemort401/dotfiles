@@ -1,2 +1,2 @@
 # dotfiles
-all my dotfiles (WIP)
+My Dotfiles 
