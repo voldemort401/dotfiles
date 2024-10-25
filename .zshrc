@@ -30,5 +30,6 @@ alias hyprcfg="nvim ${HOME}/.config/hypr/hyprland.conf"
 alias waycfg="nvim ${HOME}/.config/waybar"
 alias vim="nvim"
 alias rm="rm -rf "
+alias cat='bat --theme=base16'
 alias pacman="sudo pacman"
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
