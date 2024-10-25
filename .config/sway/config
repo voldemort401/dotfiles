@@ -1,7 +1,7 @@
 include $HOME/.config/sway/bindings
 include $HOME/.cache/wal/colors-sway
-exec_always --no-startup-id $HOME/.config/sway/scripts/autotiling.py &
-exec_always --no-startup-id $HOME/.config/sway/scripts/wallpaper.sh &
+exec_always --no-startup-id $HOME/.config/scripts/autotiling.py &
+exec_always --no-startup-id $HOME/.config/scripts/wallpaper.sh &
 exec waybar
 default_border pixel
 client.focused          $color5 $color13 $color0 $color6   $color12
