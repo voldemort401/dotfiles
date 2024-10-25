@@ -212,6 +212,6 @@ bar {
 }
 
 exec firefox-developer-edition
-exec python $HOME/.config/sway/scripts/autotiling.py &
+exec python $HOME/.config/scripts/autotiling.py &
 exec feh --bg-fill Wallpapers/mountain-night.png
 exec picom 
