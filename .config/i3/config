@@ -22,6 +22,8 @@ font pango:monospace 8
 # Start XDG autostart .desktop files using dex. See also
 # https://wiki.archlinux.org/index.php/XDG_Autostart
 exec --no-startup-id dex --autostart --environment i3
+exec --no-startup-id picom &
+exec nitrogen --restore
 
 # The combination of xss-lock, nm-applet and pactl is a popular choice, so
 # they are included here as an example. Modify as you see fit.
@@ -55,7 +57,7 @@ bindsym $mod+Return exec i3-sensible-terminal
 bindsym $mod+c kill
 
 # start dmenu (a program launcher)
-bindsym $mod+d exec --no-startup-id dmenu_run
+bindsym $mod+d exec --no-startup-id rofi -show drun 
 # A more modern dmenu replacement is rofi:
 # bindcode $mod+40 exec "rofi -modi drun,run -show drun"
 # There also is i3-dmenu-desktop which only displays applications shipping a
@@ -87,6 +89,7 @@ bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
 # split in horizontal orientation
+bindsym $mod+h split h
 
 # split in vertical orientation
 bindsym $mod+v split v
@@ -124,8 +127,6 @@ set $ws8 "8"
 set $ws9 "9"
 set $ws10 "10"
 
-
-
 # switch to workspace
 bindsym $mod+1 workspace number $ws1
 bindsym $mod+2 workspace number $ws2
@@ -155,7 +156,7 @@ bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
-bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'Exit??' -B 'Yes, exit i3' 'i3-msg exit'"
+bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
@@ -183,35 +184,8 @@ mode "resize" {
 }
 
 bindsym $mod+r mode "resize"
-workspace_auto_back_and_forth yes 
-default_border pixel 1
-default_floating_border pixel 1
-#assign apps to certain worksapce
-assign [class="YouTube Music"] $ws4 
-assign [class="firefox"] $ws1 
-
-bindsym $mod+g exec "firefox"
-bindsym $mod+t exec "kitty ranger"
-bindsym $mod+n exec "kitty nvim"
-bindsym $mod+shift+n exec "kitty nvim ~/.config/i3/config"
-
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
-    position bottom 
-    status_command i3status-rs $HOME/.config/i3status-rs/config.toml
-    colors {
-        separator #666666
-        background #222222
-        statusline #dddddd
-        focused_workspace #0088CC #0088CC #ffffff
-        active_workspace #333333 #333333 #ffffff
-        inactive_workspace #333333 #333333 #888888
-        urgent_workspace #2f343a #900000 #ffffff
-    }
+        status_command i3status
 }
-
-exec firefox-developer-edition
-exec python $HOME/.config/scripts/autotiling.py &
-exec feh --bg-fill Wallpapers/mountain-night.png
-exec picom 
